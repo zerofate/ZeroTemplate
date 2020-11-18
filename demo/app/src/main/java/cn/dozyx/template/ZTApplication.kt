@@ -3,6 +3,7 @@ package cn.dozyx.template
 import android.content.Context
 import cn.dozyx.core.base.BaseApplication
 import cn.dozyx.core.debug.ActivityLifecycleLoggerCallbacks
+import cn.dozyx.template.pop.HomePopTracker
 import com.facebook.stetho.Stetho
 
 class ZTApplication : BaseApplication() {
@@ -14,6 +15,7 @@ class ZTApplication : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         registerActivityLifecycleCallbacks(ActivityLifecycleLoggerCallbacks())
+        registerActivityLifecycleCallbacks(HomePopTracker)
         if (DebugConfig.DEBUG_LAUNCH) {
             Thread.sleep(200)
         }
